@@ -1,9 +1,12 @@
 # Cara run
 ## Server
 1. cd server
-2. pip install -r requirement.txt
-3. flask db upgrade
-4. flask run
+2. python -m venv venv
+3. .\venv\Scripts\activate.bat
+4. pip install -r requirement.txt
+5. flask db upgrade
+6. Salin dan konfigurasi pada file .env
+7. flask run
 
 ## frontend
 1. cd frontend
