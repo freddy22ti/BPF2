@@ -5,7 +5,6 @@ const PeraturanForm = ({ isOpen, closeModal, onSubmit, itemToEdit }) => {
     const [peraturan, setPeraturan] = useState('');
 
     useEffect(() => {
-
         if (itemToEdit) {
             setPeraturan(itemToEdit.content);
         } else {
@@ -25,7 +24,7 @@ const PeraturanForm = ({ isOpen, closeModal, onSubmit, itemToEdit }) => {
             <DialogBackdrop className="fixed inset-0 bg-black/30" />
             <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
                 <DialogPanel className="max-w-lg space-y-4 border bg-white p-12 rounded-lg">
-                    <DialogTitle className="font-bold">{itemToEdit ? 'Edit' : 'Tambah'} Peraturan</DialogTitle>
+                    <DialogTitle className="font-bold">{itemToEdit.content != '' ? 'Edit' : 'Tambah'} Peraturan</DialogTitle>
                     <form onSubmit={handleSubmit} className="mt-4">
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="peraturan">
@@ -46,7 +45,7 @@ const PeraturanForm = ({ isOpen, closeModal, onSubmit, itemToEdit }) => {
                                 type="submit"
                                 className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-500 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                             >
-                                {itemToEdit ? 'Update' : 'Add'} Peraturan
+                                {itemToEdit.content != '' ? 'Update' : 'Add'} Peraturan
                             </button>
                             <button
                                 type="button"

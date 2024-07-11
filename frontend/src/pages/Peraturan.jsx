@@ -10,7 +10,7 @@ const socket = io('http://localhost:5000');
 
 const Peraturan = () => {
     const [items, setItems] = useState([]);
-    const [itemToEdit, setItemToEdit] = useState(null);
+    const [itemToEdit, setItemToEdit] = useState({ content: '' });
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const token = localStorage.getItem('token');
@@ -82,7 +82,7 @@ const Peraturan = () => {
         } else {
             addItem(item);
         }
-        setItemToEdit(null);
+        closeModal();
     };
 
     const handleEdit = (item) => {
@@ -91,6 +91,7 @@ const Peraturan = () => {
     };
 
     const openModal = () => {
+        setItemToEdit({ content: '' })
         setIsModalOpen(true)
     };
     const closeModal = () => {

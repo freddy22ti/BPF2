@@ -10,7 +10,7 @@ const socket = io('http://localhost:5000');
 
 const InformasiKolam = () => {
     const [items, setItems] = useState([]);
-    const [itemToEdit, setItemToEdit] = useState(null);
+    const [itemToEdit, setItemToEdit] = useState({ nama: '', tinggi: '' });
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const token = localStorage.getItem('token');
@@ -81,7 +81,6 @@ const InformasiKolam = () => {
         } else {
             addItem(item);
         }
-        setItemToEdit(null);
         setIsModalOpen(false);
     };
 
@@ -91,6 +90,7 @@ const InformasiKolam = () => {
     };
 
     const openModal = () => {
+        setItemToEdit({ nama: "", tinggi: '' });
         setIsModalOpen(true);
     };
 
