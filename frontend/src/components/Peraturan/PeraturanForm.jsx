@@ -5,6 +5,7 @@ const PeraturanForm = ({ isOpen, closeModal, onSubmit, itemToEdit }) => {
     const [peraturan, setPeraturan] = useState('');
 
     useEffect(() => {
+
         if (itemToEdit) {
             setPeraturan(itemToEdit.content);
         } else {

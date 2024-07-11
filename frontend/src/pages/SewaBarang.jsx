@@ -89,8 +89,13 @@ const SewaBarang = () => {
         setIsModalOpen(true);
     };
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const openModal = () => {
+        setItemToEdit(null)
+        setIsModalOpen(true)
+    };
+    const closeModal = () => {
+        setIsModalOpen(false)
+    };
 
     return (
         <>

@@ -114,7 +114,7 @@ def kolam_detail(id):
     elif request.method == "DELETE":
         db.session.delete(item)
         db.session.commit()
-        socketio.emit("kolam_updated", item.to_dict())
+        socketio.emit("kolam_deleted", id)
         return jsonify({"message": "Item deleted"}), 204
 
 
@@ -153,7 +153,7 @@ def peraturan_detail(id):
     elif request.method == "DELETE":
         db.session.delete(item)
         db.session.commit()
-        socketio.emit("peraturan_updated", item.to_dict())
+        socketio.emit("peraturan_deleted", id)
         return jsonify({"message": "Item deleted"}), 204
 
 
@@ -169,7 +169,7 @@ def sewa_barang():
     elif request.method == "POST":
         data = request.get_json()
         from models import SewaBarang
-
+        data['harga'] = int(''.join(c for c in data['harga'] if c.isdigit()))
         new_item = SewaBarang(nama=data["nama"], harga=data["harga"])
         db.session.add(new_item)
         db.session.commit()
@@ -186,14 +186,14 @@ def sewa_barang_detail(id):
     if request.method == "PUT":
         data = request.get_json()
         item.nama = data["nama"]
-        item.harga = data["harga"]
+        item.harga = int(''.join(c for c in data['harga'] if c.isdigit()))
         db.session.commit()
         socketio.emit("sewa_barang_updated", item.to_dict())
         return jsonify(item.to_dict()), 200
     elif request.method == "DELETE":
         db.session.delete(item)
         db.session.commit()
-        socketio.emit("sewa_barang_updated", item.to_dict())
+        socketio.emit("sewa_barang_deleted", id)
         return jsonify({"message": "Item deleted"}), 204
 
 

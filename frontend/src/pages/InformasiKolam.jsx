@@ -1,8 +1,7 @@
 import AdminNavbar from "../components/AdminNavbar";
 import io from 'socket.io-client';
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import TabelKolam from "../components/InformasiKolam/TabelKolam";
 import KolamForm from "../components/InformasiKolam/KolamForm";
 
@@ -83,6 +82,7 @@ const InformasiKolam = () => {
             addItem(item);
         }
         setItemToEdit(null);
+        setIsModalOpen(false);
     };
 
     const handleEdit = (item) => {
@@ -90,15 +90,19 @@ const InformasiKolam = () => {
         setIsModalOpen(true);
     };
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <>
             <AdminNavbar />
             <div className="container mx-auto p-4">
                 <div className='flex'>
-
                     <h1 className="text-2xl font-bold mb-4 flex-1">Informasi Kolam</h1>
                     <button
                         onClick={openModal}
@@ -116,7 +120,7 @@ const InformasiKolam = () => {
                 />
             </div>
         </>
-    )
+    );
 }
 
 export default InformasiKolam;
