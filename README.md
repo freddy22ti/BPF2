@@ -1,13 +1,11 @@
 # Cara run
 ## Server
 1. cd server
-2. .\venv\Scripts\activate.bat
-3. flask run
+2. pip install -r requirement.txt
+3. flask db upgrade
+4. flask run
 
 ## frontend
 1. cd frontend
-2. npm run dev
-
-## Caution
-1. Jika frontend tidak menemukan package, maka jalankan 'npm install'
-2. Jika server tidak menemukan package, maka jalankan 'pip install -r requirement.txt'
+2. npm install
+3. npm run dev
