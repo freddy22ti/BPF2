@@ -7,7 +7,7 @@ const Header = () => {
                     <div className="flex justify-center items-center h-20">
                         <div className="flex items-center">
                             <p className="text-3xl font-extrabold text-white text-center">
-                                Papan Digital Informasi Kolam Renang Refena Water Park
+                                Selamat Datang Di Kolam Renang Refena Water Park
                             </p>
                         </div>
                     </div>

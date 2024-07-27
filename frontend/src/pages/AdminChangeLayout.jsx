@@ -4,7 +4,7 @@ import axios from "axios"
 const AdminChangeLayout = () => {
     const changeLayout = async (number) => {
         try {
-            const response = await axios.get(`http://localhost:5000/admin/change-layout/${number}`, {
+            await axios.get(`http://localhost:5000/admin/change-layout/${number}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }

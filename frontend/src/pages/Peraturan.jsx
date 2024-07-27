@@ -103,7 +103,6 @@ const Peraturan = () => {
             <AdminNavbar />
             <div className="container mx-auto p-4">
                 <div className='flex'>
-
                     <h1 className="text-2xl font-bold mb-4 flex-1">Peraturan</h1>
                     <button
                         onClick={openModal}

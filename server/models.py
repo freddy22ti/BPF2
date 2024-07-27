@@ -83,3 +83,16 @@ class GeneralInfo(db.Model):
     @jadwal_dan_harga.setter
     def jadwal_dan_harga(self, value):
         self.jadwalDanHarga = json.dumps(value)
+
+
+class Event(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tanggal = db.Column(db.Date, nullable=False)
+    deskripsi = db.Column(db.String(255), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "tanggal": self.tanggal.strftime("%Y-%m-%d"),
+            "deskripsi": self.deskripsi,
+        }

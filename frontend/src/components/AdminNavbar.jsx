@@ -53,6 +53,18 @@ const AdminNavbar = () => {
                 >
                   Sewa Barang
                 </Link>
+                <Link
+                  to="/admin/gambar"
+                  className={getLinkClassName('/admin/gambar')}
+                >
+                  Gambar
+                </Link>
+                <Link
+                  to="/admin/events"
+                  className={getLinkClassName('/admin/events')}
+                >
+                  Pengumuman
+                </Link>
               </div>
             </div>
           </div>

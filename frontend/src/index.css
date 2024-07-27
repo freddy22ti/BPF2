@@ -1,3 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('assets/fonts/OpenSans/OpenSans-Regular.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('assets/fonts/OpenSans/OpenSans-Bold.ttf');
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('assets/fonts/OpenSans/OpenSans-Italic.ttf');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        src: url('assets/fonts/Poppins/Poppins-Regular.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Poppins';
+        src: url('assets/fonts/Poppins/Poppins-Bold.ttf');
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Poppins';
+        src: url('assets/fonts/Poppins/Poppins-Italic.ttf');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    :root {
+        font-family: 'Open Sans', 'Poppins', 'sans-serif';
+    }

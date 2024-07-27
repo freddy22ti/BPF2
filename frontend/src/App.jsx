@@ -9,6 +9,8 @@ import SewaBarang from "./pages/SewaBarang";
 import InformasiKolam from "./pages/InformasiKolam";
 import { Auth, Logout } from './Auth';
 import './index.css'
+import GalleryGambar from "./pages/GalleryGambar";
+import Pengumuman from "./pages/Pengumuman";
 
 function MyApp() {
 
@@ -46,6 +48,18 @@ function MyApp() {
             <>
               <Auth />
               <InformasiKolam />
+            </>
+          } />
+          <Route path='/admin/gambar' element={
+            <>
+              <Auth />
+              <GalleryGambar />
+            </>
+          } />
+          <Route path='/admin/events' element={
+            <>
+              <Auth />
+              <Pengumuman />
             </>
           } />
           <Route path="/logout" element={<Logout />} />

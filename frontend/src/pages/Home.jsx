@@ -9,7 +9,7 @@ const Home = () => {
 
   const layouts = useMemo(() => [
     () => import('../layouts/Layout1'),
-    () => import('../layouts/Layout2')
+    () => import('../layouts/Layout2'),
   ], []);
 
   useEffect(() => {
