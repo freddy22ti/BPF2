@@ -142,7 +142,7 @@ const Pengumuman = () => {
                                 <tr key={event.id}>
                                     <td className="border px-4 py-2">{event.tanggal}</td>
                                     <td className="border px-4 py-2">{event.deskripsi}</td>
-                                    <td className="border px-4 py-2">
+                                    <td className="border px-4 py-2 flex justify-center">
                                         <button
                                             onClick={() => openModalForEdit(event)}
                                             className="bg-blue-500 text-white px-2 py-1 rounded mr-2"
